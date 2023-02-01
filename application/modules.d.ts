@@ -1,0 +1,6 @@
+declare module '@vidispine/proptypes'
+declare module '@vidispine/vdt-api'
+declare module '@vidispine/vdt-js'
+declare module '@vidispine/vdt-react'
+declare module '@vidispine/vdt-videojs-react'
+declare module 'cookie-cutter'

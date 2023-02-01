@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MediaCardContent /> should render correctly 1`] = `
+<div
+  className="style"
+>
+  <span
+    className="text-gray-800 dark:text-grayDark-800 mb-1 block"
+  >
+    Slug
+  </span>
+  <span
+    className="text-gray-700 dark:text-grayDark-700"
+  >
+    Some cool content
+  </span>
+</div>
+`;

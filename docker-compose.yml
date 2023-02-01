@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  web:
+    image: node:18.8.0-alpine3.15
+    user: node
+    working_dir: /usr/src/app
+    volumes:
+      - ./application:/usr/src/app
+    command: sh -c "yarn && yarn build && yarn start"
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: development
+      DEBUG: nodejs-docker-express:*
+    

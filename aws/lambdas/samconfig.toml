@@ -1,0 +1,17 @@
+version=0.1
+
+[dev.deploy.parameters]
+stack_name = "sam-mam-lambdas-dev"
+s3_bucket = "aj-mam-deploys"
+s3_prefix = "sam/mam-lambdas/dev"
+region = "eu-west-1"
+confirm_changeset = false
+capabilities = "CAPABILITY_IAM"
+
+[prod.deploy.parameters]
+stack_name = "sam-mam-lambdas-prod"
+s3_bucket = "aj-mam-deploys"
+s3_prefix = "sam/mam-lambdas/prod"
+region = "eu-west-1"
+confirm_changeset = false
+capabilities = "CAPABILITY_IAM"

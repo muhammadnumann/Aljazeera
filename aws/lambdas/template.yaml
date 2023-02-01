@@ -1,0 +1,77 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: SAM Template for content-workflow lambdas
+
+##########################################################################
+#   ENVIRONMENTS: [DEV, PROD]                                            #
+##########################################################################
+Parameters:
+  stage:
+    Type: String
+    AllowedValues:
+      - dev
+      - prod
+  currentDate:
+    Type: String
+
+# More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
+Globals:
+  Function:
+    Timeout: 600
+    Handler: index.handler
+    Runtime: nodejs16.x
+    Environment:
+      Variables:
+        environment: !Sub ${stage}
+
+    AutoPublishAlias: Prod
+    Tags:
+      Stage: !Sub ${stage}
+      ProductID: Content-Workflows
+      Environment: !Sub ${stage}
+      Business / Service Owner: Digital-API-Support@aljazeera.net
+      Purpose: Backend
+      CreatedBy: Digital-API-Support@aljazeera.net
+
+
+##########################################################################
+#   RESOURCES:                                                           #
+##########################################################################
+
+Resources:
+  ##########################################################################
+  #   Shared Lambda Layer                                                  #
+  ##########################################################################
+  mamSharedLayer:
+    Type: AWS::Serverless::LayerVersion
+    Properties:
+      ContentUri: mam-SharedLayer/
+      Description: !Sub Layer created on ${currentDate}
+      LayerName: !Sub mam-SharedLayer-${stage}
+      CompatibleRuntimes:
+        - nodejs16.x
+
+  ##########################################################################
+  #   1 - Proccess Broadcast Files                                         #
+  ##########################################################################
+  # Lambda
+  mamProccessBroadcastFiles:
+    Type: AWS::Serverless::Function
+    UpdateReplacePolicy: Delete
+    Properties:
+      FunctionName: !Sub mam-ProccessBroadcastFiles-${stage}
+      CodeUri: mam-ProccessBroadcastFiles/src
+      Role: !Sub arn:aws:iam::${AWS::AccountId}:role/mam-services-${stage}
+      Environment:
+        Variables:
+          bucket: mam-storage-lab
+          region: eu-west-1
+          vidispine: vidispine02
+          inews: aje-xmls
+          mosart: aje-videos
+      Layers:
+        - !Ref mamSharedLayer
+
+
+
+

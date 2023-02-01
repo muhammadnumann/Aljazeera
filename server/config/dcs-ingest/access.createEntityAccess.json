@@ -1,0 +1,10 @@
+{
+    "entityType" : "collection",
+    "entityId" : "VX-17",
+    "accessControlDocument" : {
+        "permission" : "ALL",
+        "recursive" : "true",
+        "grantor" : "admin",
+        "group" : "dcs-department"
+    }
+}

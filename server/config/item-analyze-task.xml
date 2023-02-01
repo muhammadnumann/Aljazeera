@@ -1,0 +1,39 @@
+<AnalyzeJobDocument  xmlns="http://xml.vidispine.com/schema/vidispine">
+    <task>
+        <description>Creating analyze item metadata using a JavaScript task</description>
+        <script>
+            <![CDATA[
+// Retrieve the id of the item that is being imported
+var itemId = job.getData("itemId");
+var shapeId = job.getData("shapeId");
+var priority = job.getData("priority");
+var storageId = job.getData("storageId");
+var stream = job.getData("stream");
+var channel = job.getData("channel");
+
+// Build a document with the metadata to set
+var metadata = {
+    "channel":[
+    {
+      "stream":stream,
+      "tone":[],
+      "channel":channel
+    }
+  ]
+};
+
+
+// Update the item metadata
+var result = api.path("item/"+itemId+"/shape/"+shapeId+"/analyze?priority="+priority+"&storageId="+storageId).input(metadata).post();
+var metadata = result.item[0].metadata;
+]]>
+        </script>
+        <step>1600</step>
+        <dependency>
+            <previous>true</previous>
+            <allPrevious>true</allPrevious>
+        </dependency>
+        <jobType>AUTO_IMPORT</jobType>
+        <critical>false</critical>
+    </task>
+</AnalyzeJobDocument >

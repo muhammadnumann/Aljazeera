@@ -1,0 +1,2 @@
+bucket = "vidicore-terraform-state"
+prefix = "vidicore-staging/front-end"

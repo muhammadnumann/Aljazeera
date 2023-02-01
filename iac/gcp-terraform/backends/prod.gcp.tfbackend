@@ -1,0 +1,2 @@
+bucket = "ajgc-dig-pdi-prd-mam-0-tf-state"
+prefix = "mam-frontend/prod"

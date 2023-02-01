@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MediaCardThumbnail /> should render correctly 1`] = `
+[
+  ";",
+  <MediaCardThumbnail
+    itemId="VX-1"
+    thumbnail="/path/to/img.jpg"
+  />,
+  ");",
+]
+`;

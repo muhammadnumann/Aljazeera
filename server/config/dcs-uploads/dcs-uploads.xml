@@ -1,0 +1,29 @@
+<TaskDefinitionListDocument xmlns="http://xml.vidispine.com/schema/vidispine">
+    <task>
+        <description>Adding uploaded item to dcs-uploads collection using a JavaScript task</description>
+        <script>
+              <![CDATA[
+// Retrieve the id of the item that is being imported
+var itemId = job.getData("itemId");
+
+// Id of dcs-uploads collection
+var collectionId = 'VX-18';
+
+var params = { collectionId: collectionId, entityId: itemId,
+        queryParams: { type: 'item'}};
+
+
+// Update the item metadata
+var result = api.path("collection/"+collectionId+"/"+itemId).input(params).put();
+
+]]>
+        </script>
+        <step>1800</step>
+        <dependency>
+            <previous>true</previous>
+            <allPrevious>true</allPrevious>
+        </dependency>
+        <jobType>AUTO_IMPORT</jobType>
+        <critical>false</critical>
+    </task>
+</TaskDefinitionListDocument>

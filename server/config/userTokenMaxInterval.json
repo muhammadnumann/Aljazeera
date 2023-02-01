@@ -1,0 +1,6 @@
+{
+    "configurationPropertyDocument": {
+      "key": "userTokenMaxInterval",
+      "value": 2592000
+    }
+}

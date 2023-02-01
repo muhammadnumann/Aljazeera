@@ -1,0 +1,39 @@
+{
+  "Records": [
+    {
+      "eventVersion": "2.1",
+      "eventSource": "aws:s3",
+      "awsRegion": "eu-west-1",
+      "eventTime": "2022-07-31T18:54:31.792Z",
+      "eventName": "ObjectCreated:Put",
+      "userIdentity": {
+        "principalId": "AWS:AIDA5ZS4U72YCLILPS3FT"
+      },
+      "requestParameters": {
+        "sourceIPAddress": "189.6.6.170"
+      },
+      "responseElements": {
+        "x-amz-request-id": "8K5HKJEY02JRERBT",
+        "x-amz-id-2": "YRqAr2wPmxVLYxGOBG0onNNMQRu8Uo3QGFzz4ptnAT1bpCFf5O29016Q+3wnJgFhzAu5HiE/363BAOl2+t80KrnW2J/3RfoK"
+      },
+      "s3": {
+        "s3SchemaVersion": "1.0",
+        "configurationId": "inews-dev",
+        "bucket": {
+          "name": "mam-storage-lab",
+          "ownerIdentity": {
+            "principalId": "A2P23EMK91QRQV"
+          },
+          "arn": "arn:aws:s3:::mam-storage-lab"
+        },
+        "object": {
+          "key": "aje-xmls-dev/5e9d27d2.xml",
+          "size": 3234,
+          "eTag": "ef6e7b0ddf49bf5a2bb14f2ba93faadb",
+          "versionId": "nknj11cZySlrCIrkaroivtq3Hq_mgAI3",
+          "sequencer": "0062E6CFE7B8F60909"
+        }
+      }
+    }
+  ]
+}

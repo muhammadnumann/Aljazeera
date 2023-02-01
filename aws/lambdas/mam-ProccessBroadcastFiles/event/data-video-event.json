@@ -1,0 +1,39 @@
+{
+  "Records": [
+    {
+      "eventVersion": "2.1",
+      "eventSource": "aws:s3",
+      "awsRegion": "eu-west-1",
+      "eventTime": "2022-08-02T22:55:47.237Z",
+      "eventName": "ObjectCreated:CompleteMultipartUpload",
+      "userIdentity": {
+        "principalId": "AWS:AIDA5ZS4U72YCLILPS3FT"
+      },
+      "requestParameters": {
+        "sourceIPAddress": "189.6.6.170"
+      },
+      "responseElements": {
+        "x-amz-request-id": "XVXD844VKWP09CBT",
+        "x-amz-id-2": "sbfF6k19mmjo+U5+mF5D2VqEaPhSKvtiVp5iL1JYz3fGdLHp3mH5ZAIpSNIfrCHK+WLv4olAWIvwtBgD/4wxhm68tXcFY2mc"
+      },
+      "s3": {
+        "s3SchemaVersion": "1.0",
+        "configurationId": "video",
+        "bucket": {
+          "name": "mam-storage-lab",
+          "ownerIdentity": {
+            "principalId": "A2P23EMK91QRQV"
+          },
+          "arn": "arn:aws:s3:::mam-storage-lab"
+        },
+        "object": {
+          "key": "aje-videos/AJED-080222QMZ.mp4",
+          "size": 249959866,
+          "eTag": "57dc9cac0f69fbe8c8a92223bc7a4a4e-15",
+          "versionId": "uUtTDSXd66SkX87UwYZMkbSxeTMS80NV",
+          "sequencer": "0062E9AAE7D14C7B35"
+        }
+      }
+    }
+  ]
+}

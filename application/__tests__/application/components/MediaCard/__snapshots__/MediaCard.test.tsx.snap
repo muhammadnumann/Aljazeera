@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MediaCard /> should render correctly 1`] = `
+<div
+  className="grid h-60 w-64 rounded-lg shadow-lg"
+>
+  <div
+    className="h-[140px] w-64 rounded-t-lg "
+    style={
+      {
+        "backgroundImage": "url()",
+      }
+    }
+  >
+    <MediaCardThumbnail
+      onClick={[Function]}
+      thumbnailArray={[]}
+    />
+  </div>
+  <div
+    className="relative flex h-[100px] w-64 bg-gray-50 dark:bg-grayDark-50 rounded-b-lg border-t-[4px] border-t-orange-500"
+  >
+    <MediaCardContent
+      className="self-center pl-4 -mt-4 text-[14px] text-gray-800 leading-[20px] font-semibold dark:text-white cursor-pointer"
+      onClick={[Function]}
+      truncateContentLength={30}
+    />
+    <TimeAgo
+      className="absolute left-4 bottom-2 text-[14px] text-gray-700 dark:text-grayDark-400"
+      live={true}
+    />
+    <MediaCardMoreDetails
+      itemType={{}}
+    />
+  </div>
+</div>
+`;

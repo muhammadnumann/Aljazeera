@@ -1,0 +1,46 @@
+<TaskDefinitionListDocument xmlns="http://xml.vidispine.com/schema/vidispine">
+    <task>
+        <description>Updating item metadata using a JavaScript task</description>
+        <script>
+            <![CDATA[
+// Retrieve the id of the item that is being imported
+var itemId = job.getData("itemId");
+
+var dayOfWeekName = new Date().toLocaleString(
+  'default', {weekday: 'long'}
+);
+
+// Build a document with the metadata to set
+var metadata = {
+  "timespan": [
+    {
+      "start": "-INF",
+      "end": "+INF",
+      "field": [
+        {
+          "name": "day_of_week",
+          "value": [
+            {
+              "value": dayOfWeekName.toUpperCase()
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+// Update the item metadata
+var result = api.path("item/"+itemId+"/metadata").input(metadata).put();
+var metadata = result.item[0].metadata;
+]]>
+        </script>
+        <step>1500</step>
+        <dependency>
+            <previous>true</previous>
+            <allPrevious>true</allPrevious>
+        </dependency>
+        <jobType>AUTO_IMPORT</jobType>
+        <critical>false</critical>
+    </task>
+</TaskDefinitionListDocument>

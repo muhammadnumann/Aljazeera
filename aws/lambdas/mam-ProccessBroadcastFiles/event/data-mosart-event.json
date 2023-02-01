@@ -1,0 +1,39 @@
+{
+  "Records": [
+    {
+      "eventVersion": "2.1",
+      "eventSource": "aws:s3",
+      "awsRegion": "eu-west-1",
+      "eventTime": "2022-08-01T02:04:04.901Z",
+      "eventName": "ObjectCreated:Put",
+      "userIdentity": {
+        "principalId": "AWS:AIDA5ZS4U72YCLILPS3FT"
+      },
+      "requestParameters": {
+        "sourceIPAddress": "189.6.6.170"
+      },
+      "responseElements": {
+        "x-amz-request-id": "9ZXHEKTHDHBB4X09",
+        "x-amz-id-2": "/JCyt6T1RbxsG64xHuL+Se6FoRD/7AYcYueDW/LFPj0q2xhe80lr54n2FzYdDB/eAwxm0tPZ3qP2RIAwK/g6CbzbIXhTTl6E"
+      },
+      "s3": {
+        "s3SchemaVersion": "1.0",
+        "configurationId": "mosart-dev",
+        "bucket": {
+          "name": "mam-storage-lab",
+          "ownerIdentity": {
+            "principalId": "A2P23EMK91QRQV"
+          },
+          "arn": "arn:aws:s3:::mam-storage-lab"
+        },
+        "object": {
+          "key": "aje-videos-dev/AJED-072922NTG.xml",
+          "size": 288,
+          "eTag": "26838686929aed039d7d9a4a261c05ee",
+          "versionId": "uRR67HEHk4l30GMEL7bG82UVRhusZBcF",
+          "sequencer": "0062E73494D57D34C7"
+        }
+      }
+    }
+  ]
+}
